@@ -1,4 +1,4 @@
-/*Benjamin Bloomfield, October 3, 2024 [date handed in]
+/*Benjamin Bloomfield, October 3, 2024 
  *
  * WHAT THIS DO
 
@@ -16,16 +16,16 @@ int main(int argc, char *argv[]) {
     char *userAnswer = argv[2];
 
     // initializing a list of possible answers and questions
-    char *answers[] = {"answer1", "answer2", "answer3"};
-    char *questions[] = {"question1", 
-                        "question2", 
-                        "question3"};
+    char *answers[] = {"ls", "EXIT_SUCCESS", "clone"};
+    char *questions[] = {"In Linux, what command would you use to list the contents of the working directory?", 
+                        "What statement would you return to  indicate successful program termination in C?", 
+                        "In GitHuv, what command is used to clone a repository (git __)?"};
 
     // initializing different message outputs based on the users inputs
     char *helpMessage = "To view a quiz question, please enter: quiz -#. \n"
                         "To answer a question, please enter: quiz -# \"my answer\" ";
     char *badUsage = "Please enter a valid input. \n"
-                     "Enter \"quiz --help\" for more information";
+                     "Enter \"quiz --help\" for more information.";
     
 
     // if the user provides no input, return EXIT_FAILURE to indicate that the program terminated with an error
@@ -73,13 +73,13 @@ int main(int argc, char *argv[]) {
         if (strcmp(response, "-1") == 0) { 
             // check to see if the answer the user entered matches the correct answer in the 'answers' array
             if (strcmp(userAnswer, answers[0]) == 0) {
-                puts("1: That is correct!"); // if the answers match, output a message telling the user they are right
+                puts("Great job, that is the correct answer!"); // if the answers match, output a message telling the user they are right
                 return EXIT_SUCCESS;
             }
 
             // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
-                puts("1: That is incorrect!");
+                puts("That is wrong, so sorry!");
                 return EXIT_SUCCESS;
             }
         }
@@ -88,13 +88,13 @@ int main(int argc, char *argv[]) {
         else if (strcmp(response, "-2") == 0) {
             // check to see if the answer the user entered matches the correct answer in the 'answers' array
             if (strcmp(userAnswer, answers[1]) == 0) { 
-                puts("2: That is correct!"); // if the answers match, output a message telling the user they are right
+                puts("Well done, that is correct!"); // if the answers match, output a message telling the user they are right
                 return EXIT_SUCCESS;
             }
 
             // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
-                puts("2: That is incorrect!");
+                puts("Sorry that is incorrect :(");
                 return EXIT_SUCCESS;
             }
         }
@@ -103,13 +103,13 @@ int main(int argc, char *argv[]) {
         else if (strcmp(response, "-3") == 0) {
             // check to see if the answer the user entered matches the correct answer in the 'answers' array
             if (strcmp(userAnswer, answers[2]) == 0) {
-                puts("3: That is correct!"); // if the answers match, output a message telling the user they are right
+                puts("Awesome! That is correct!"); // if the answers match, output a message telling the user they are right
                 return EXIT_SUCCESS;
             }
 
             // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
-                puts("3: That is incorrect!");
+                puts("Awe man! That is wrong :(");
                 return EXIT_SUCCESS;
             }
         }
