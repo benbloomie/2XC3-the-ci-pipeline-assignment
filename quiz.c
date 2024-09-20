@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     char *answers[] = {"ls", "EXIT_SUCCESS", "clone"};
     char *questions[] = {"In Linux, what command would you use to list the contents of the working directory?", 
                         "What statement would you return to  indicate successful program termination in C?", 
-                        "In GitHuv, what command is used to clone a repository (git __)?"};
+                        "In GitHub, what command is used to clone a repository (git __)?"};
 
     // initializing different message outputs based on the users inputs
     char *helpMessage = "To view a quiz question, please enter: quiz -#. \n"
@@ -79,7 +79,7 @@ int main(int argc, char *argv[]) {
 
             // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
-                puts("That is wrong, so sorry!");
+                printf("Incorrect. The correct answer is \"%s\".\n", answers[0]);
                 return EXIT_SUCCESS;
             }
         }
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
 
             // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
-                puts("Sorry that is incorrect :(");
+                printf("Incorrect. The correct answer is \"%s\".\n", answers[1]);
                 return EXIT_SUCCESS;
             }
         }
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
 
             // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
-                puts("Awe man! That is wrong :(");
+                printf("Incorrect. The correct answer is \"%s\".\n", answers[2]);
                 return EXIT_SUCCESS;
             }
         }
