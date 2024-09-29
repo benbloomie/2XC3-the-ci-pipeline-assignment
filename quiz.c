@@ -1,14 +1,27 @@
-/*Benjamin Bloomfield, October 3, 2024 
+/*Benjamin Bloomfield, bloomfib, October 3, 2024 
  *
- * WHAT THIS DO
-
-*/
+ * This code works as a command-line quiz, that allows users to answer questions based on Linux,
+ * GitHub, and C commands. Users can view or answer questions based on provided arguments, and
+ * will receive feedback corresponding to their input.  
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// DESCRIBE FUNCTION
+/* Name of the function: main
+ *
+ * Parameters:
+ *  int grc --> the number of arguments the user inputs
+ *  char *char[] --> an array of command-line argument strings
+ * Function Description:
+ *  Processes command-lind arguments, and determines if the user wants to view or answer a question.
+ *  Checks the input against varying cases, to provide feedback accordingly.
+ * Return Value and Output:
+ *  Returns --> EXIT_SUCCESS for correct input, and EXIT_FAILURE elsewise
+ *  Output --> outputs varying messages corresponding to the users input, including quiz questions
+ *  answer feedback, and help messages in case of bad input.
+ */
 int main(int argc, char *argv[]) {  
 
     // initializing variables for user input, which will be used to determine questions and answers
@@ -18,12 +31,12 @@ int main(int argc, char *argv[]) {
     // initializing a list of possible answers and questions
     char *answers[] = {"ls", "EXIT_SUCCESS", "clone"};
     char *questions[] = {"In Linux, what command would you use to list the contents of the working directory?", 
-                        "What statement would you return to  indicate successful program termination in C?", 
-                        "In GitHuv, what command is used to clone a repository (git __)?"};
+                        "What statement would you return to indicate successful program termination in C?", 
+                        "In GitHub, what command is used to clone a repository (git __)?"};
 
     // initializing different message outputs based on the users inputs
-    char *helpMessage = "To view a quiz question, please enter: quiz -#. \n"
-                        "To answer a question, please enter: quiz -# \"my answer\" ";
+    char *helpMessage = "To view a quiz question, please enter: quiz -#, where # corresponds to a question number. \n"
+                        "To answer a question, please enter: quiz -# \"ANSWER HERE\"";
     char *badUsage = "Please enter a valid input. \n"
                      "Enter \"quiz --help\" for more information.";
     
@@ -37,7 +50,8 @@ int main(int argc, char *argv[]) {
 
     // if the user inputs one value after 'quiz', check for the following conditionals
     else if (argc == 2) {
-        // if the user enters '-#', output the corresponding question from the initialized array, and return EXIT_SUCCESS
+
+        // if the user enters '-#', output the corresponding question from the initialized array for entry #, and return EXIT_SUCCESS
         if (strcmp(response, "-1") == 0) {
             puts(questions[0]);
             return EXIT_SUCCESS;
@@ -69,9 +83,10 @@ int main(int argc, char *argv[]) {
 
     // if the user inputs two values after 'quiz', check the following conditionals, for an answer to the question
     else if (argc == 3) {
-        // checks to see if the user is attempting to answer question 1
+
+        // checks to see if the user is attempting to answer question # based on the "-#" input
         if (strcmp(response, "-1") == 0) { 
-            // check to see if the answer the user entered matches the correct answer in the 'answers' array
+            // check to see if the answer the user entered matches the correct answer in the 'answers' array for entry #
             if (strcmp(userAnswer, answers[0]) == 0) {
                 puts("Great job, that is the correct answer!"); // if the answers match, output a message telling the user they are right
                 return EXIT_SUCCESS;
@@ -84,30 +99,24 @@ int main(int argc, char *argv[]) {
             }
         }
         
-        // checks to see if the user is attempting to answer question 2
         else if (strcmp(response, "-2") == 0) {
-            // check to see if the answer the user entered matches the correct answer in the 'answers' array
             if (strcmp(userAnswer, answers[1]) == 0) { 
-                puts("Well done, that is correct!"); // if the answers match, output a message telling the user they are right
+                puts("Well done, that is correct!"); 
                 return EXIT_SUCCESS;
             }
 
-            // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
                 puts("Sorry that is incorrect :(");
                 return EXIT_SUCCESS;
             }
         }
 
-        // checks to see if the user is attempting to answer question 3
         else if (strcmp(response, "-3") == 0) {
-            // check to see if the answer the user entered matches the correct answer in the 'answers' array
             if (strcmp(userAnswer, answers[2]) == 0) {
                 puts("Awesome! That is correct!"); // if the answers match, output a message telling the user they are right
                 return EXIT_SUCCESS;
             }
 
-            // if the inputted answer, and correct answer don't match, output a message indicating it was false
             else {
                 puts("Awe man! That is wrong :(");
                 return EXIT_SUCCESS;
