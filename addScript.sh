@@ -2,7 +2,7 @@
 # this script automates git add, commit, push and tag for quiz.c
 # Benjamin Bloomfield, McMaster University, 2024
 
-git add quiz.c
+git add *.c
 
 # checks if at least one argument (commit message) is provided
 if [[ $# -ge 1 ]]

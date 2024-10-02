@@ -1,4 +1,4 @@
-/*Benjamin Bloomfield, bloomfib, October 3, 2024 
+/*Benjamin Bloomfield, bloomfib, October 2, 2024 
  *
  * This code works as a command-line quiz, that allows users to answer questions based on Linux,
  * GitHub, and C commands. Users can view or answer questions based on provided arguments, and
@@ -12,8 +12,8 @@
 /* Name of the function: main
  *
  * Parameters:
- *  int grc --> the number of arguments the user inputs
- *  char *char[] --> an array of command-line argument strings
+ *  int agrc --> the number of arguments the user inputs
+ *  char *argv[] --> an array of command-line argument strings
  * Function Description:
  *  Processes command-lind arguments, and determines if the user wants to view or answer a question.
  *  Checks the input against varying cases, to provide feedback accordingly.
@@ -24,7 +24,7 @@
  */
 int main(int argc, char *argv[]) {  
 
-    // initializing variables for user input, which will be used to determine questions and answers
+    // initializing variables for user's input, which will be used to determine questions and answers
     char *response = argv[1];
     char *userAnswer = argv[2];
 
@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
             }
 
             else {
-                puts("Awe man! That is wrong :(");
+                puts("Sorry! That is wrong :(");
                 return EXIT_SUCCESS;
             }
         }
