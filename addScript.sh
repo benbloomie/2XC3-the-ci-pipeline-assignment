@@ -20,3 +20,4 @@ then
 	fi
 else
 	echo "After calling the script, please enter <commit message (with quotes)> <tag name>"
+	exit 1
