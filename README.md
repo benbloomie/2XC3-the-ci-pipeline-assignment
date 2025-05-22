@@ -1,4 +1,4 @@
-# quiz - Command-Line Quiz Program  
+# quiz - Command-Line Quiz  
 A simple command-line quiz for testing knowledge of Linux, C, and GitHub.
 
 ---
@@ -18,8 +18,8 @@ This program allows users to view and answer multiple-choice style questions dir
 1. Clone or download the repository:
 
     ```bash
-    git clone https://github.com/benbloomie/2XC3-the-ci-pipeline-assignment
-    cd 2XC3-the-ci-pipeline-assignment
+    git clone https://github.com/benbloomie/command-line-quiz
+    cd command-line-quiz
     ```
 
 2. Compile the program:
